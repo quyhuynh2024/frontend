@@ -1,9 +1,9 @@
-.wrapper-input {
+.input-wrapper {
   width: 100%;
   position: relative;
 }
 
-.wrapper-input input {
+.input-wrapper input {
   border: 1px solid rgb(218, 220, 224);
   border-radius: 4px;
   width: 100%;
@@ -13,14 +13,14 @@
   transition: 0.25s ease;
 }
 
-.wrapper-input input:not(:placeholder-shown),
-.wrapper-input input:hover,
-.wrapper-input input:focus {
+.input-wrapper input:not(:placeholder-shown),
+.input-wrapper input:hover,
+.input-wrapper input:focus {
   border-width: 2px;
   border-color: #6a5af9;
 }
 
-.wrapper-input label {
+.input-wrapper label {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -31,8 +31,8 @@
   transition: 0.25s ease;
 }
 
-.wrapper-input input:not(:placeholder-shown) + label,
-.wrapper-input input:focus + label {
+.input-wrapper input:not(:placeholder-shown) + label,
+.input-wrapper input:focus + label {
   top: 0;
   left: 11px;
   padding: 0 10px;

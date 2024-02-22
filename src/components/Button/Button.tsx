@@ -5,7 +5,6 @@ import {
   useImperativeHandle,
   useRef,
 } from "react";
-import styles from "./Button.module.css";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   // custom properties go here
@@ -34,7 +33,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           const ripple = document.createElement("span");
           const rippleColor =
             innerRef.current.getAttribute("data-ripple") || "#212129";
-          ripple.classList.add(styles["ripple-effect"]);
+          ripple.classList.add("ripple-effect");
           ripple.style.background = rippleColor;
           innerRef.current.appendChild(ripple);
           ripple.style.left = x + "%";
@@ -48,9 +47,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <button
-        className={`${styles.btn} ${styles["btn-ripple"]} ${
-          styles[`variant-${variant || "contained"}`]
-        } ${className || ""}`}
+        className={`btn btn-ripple variant-${variant || "contained"} ${
+          className || ""
+        }`}
         ref={innerRef}
         {...props}
       >

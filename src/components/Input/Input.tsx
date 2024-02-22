@@ -1,5 +1,4 @@
 import React, { InputHTMLAttributes, forwardRef } from "react";
-import styles from "./Input.module.css";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   // custom properties go here
@@ -9,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ placeholder, id, ...props }, ref) => {
     return (
-      <div className={styles["wrapper-input"]}>
+      <div className="input-wrapper">
         <input
           ref={ref}
           {...props}
