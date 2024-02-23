@@ -40,7 +40,7 @@ function Login() {
   };
   return (
     <form ref={formRef} onSubmit={handleSubmit}>
-      <Input placeholder="Email" name="email" />
+      <Input placeholder="Email" name="email" autoFocus />
       <br />
       <Input placeholder="Password" name="password" />
       <br />

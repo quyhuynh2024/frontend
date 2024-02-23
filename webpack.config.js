@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
@@ -30,8 +31,7 @@ module.exports = (env, argv) => {
     },
     output: {
       filename: "js/bundle.[contenthash:6].js",
-      path: path.resolve(__dirname, "dist"),
-      clean: true,
+      path: path.resolve(__dirname, "build"),
       publicPath: "/", // added this line to fix the case go directly to dynamic route (go directly route /products/:productId)
     },
     devServer: {
@@ -40,6 +40,7 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
     },
     plugins: [
+      new Dotenv(),
       new ReactRefreshPlugin(),
       new HtmlWebpackPlugin({
         template: "./public/index.html",
