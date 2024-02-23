@@ -31,6 +31,8 @@ module.exports = (env, argv) => {
     output: {
       filename: "js/bundle.[contenthash:6].js",
       path: path.resolve(__dirname, "dist"),
+      clean: true,
+      publicPath: "/", // added this line to fix the case go directly to dynamic route (go directly route /products/:productId)
     },
     devServer: {
       hot: true,

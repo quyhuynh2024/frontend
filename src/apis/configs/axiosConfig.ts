@@ -29,13 +29,13 @@ api.interceptors.response.use(
     ) {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
       const payload = {
-        refreshToken: tokens.refreshToken,
+        refreshToken: tokens?.refreshToken,
       };
 
       const apiResponse = await api.post("/api/v1/auth/refresh-token", payload);
       localStorage.setItem("tokens", JSON.stringify(apiResponse.data));
 
-      error.config.headers.Authorization = `Bearer ${apiResponse.data.accessToken}`;
+      error.config.headers.Authorization = `Bearer ${apiResponse.data?.accessToken}`;
       return axios(error.config);
     } else {
       return Promise.reject(error);

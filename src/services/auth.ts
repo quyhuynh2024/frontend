@@ -6,8 +6,6 @@ class AuthService {
   async login(formData: LoginFormData) {
     try {
       const response = await api.post("/api/v1/auth/login", formData);
-      // storing tokens after successful login
-      localStorage.setItem("tokens", JSON.stringify(response.data));
       return response.data;
     } catch (error) {
       throw error;
