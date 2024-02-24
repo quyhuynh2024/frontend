@@ -10,7 +10,7 @@ function App() {
         data-ripple="#0990ff"
         onClick={async () => {
           try {
-            const res = await api.get("http://localhost:5000");
+            const res = await api.get("/");
             console.log(res);
           } catch (error) {
             console.log(error);
